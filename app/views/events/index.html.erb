@@ -9,7 +9,10 @@
 </div> -->
 
 <h1>Upcoming Events</h1>
-
+<div class="mt-4">
+    <%= link_to "Create new Event", "/events/new", class: "btn btn-outline-primary" %>
+    <%= button_to "Search events with AI 💬", chats_path, method: :post, class: "btn btn-primary mb-3" %>
+</div>
 <% @events.each do |event| %>
   <div class="card mb-3">
     <div class="card-body">
