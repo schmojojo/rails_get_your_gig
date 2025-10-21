@@ -6,3 +6,15 @@
     </div>
 
 </div>
+
+prompt = <<-PROMPT
+  You are an experienced chef, specialised in French gastronomy.
+
+  I am a beginner cook, looking to learn simple recipes.
+
+  Guide me into making a classic French oeuf mayo.
+
+  Provide step-by-step instructions in bullet points, using Markdown.
+PROMPT
+response = RubyLLM.chat.ask(prompt)
+puts response.content
