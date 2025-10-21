@@ -14,6 +14,14 @@
     <%= f.submit "Save Event", class: "btn btn-primary" %>
   <% end %>
 
+  <div class="mt-4">
+    <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
+  </div>
+
 <% else %>
   <p>Bitte <%= link_to "logge dich ein", new_user_session_path %>, um ein Event zu erstellen.</p>
+
+  <div class="mt-4">
+    <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
+  </div>
 <% end %>
