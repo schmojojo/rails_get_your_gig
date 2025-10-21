@@ -1,7 +1,13 @@
 class EventsController < ApplicationController
+  before_action :authenticate_user!, only: :new
+
   def index
-    @events = Event.all
+    @events = Event.all.order(date: :asc)
     @event = Event.new if user_signed_in?
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   def new

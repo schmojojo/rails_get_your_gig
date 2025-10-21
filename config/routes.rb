@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
+  get 'events/index'
+  get 'events/show'
   devise_for :users
+  root to: "pages#events"
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  root to: "events#index"
+  resources :events, only: [:index, :show, :new, :create]
 
-  resources :events, only: [:index,:new,:create]
-
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
+  # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
+  get "/pages/home", to: "pages#home"
+
+  resources :chats, only: [:create, :show]
 end
