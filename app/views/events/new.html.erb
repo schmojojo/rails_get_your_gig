@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <h2>Neues Event erstellen</h2>
+
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :contact %>
+    <%= f.input :date, as: :date %>
+    <%= f.input :category, as: :select,
+                collection: ["Entertainment", "Education", "Work-Related", "Personal"],
+                include_blank: false
+    %>
+    <%= f.input :location %>
+    <%= f.submit "Save Event", class: "btn btn-primary" %>
+  <% end %>
+
+<% else %>
+  <p>Bitte <%= link_to "logge dich ein", new_user_session_path %>, um ein Event zu erstellen.</p>
+<% end %>
