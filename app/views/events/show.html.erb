@@ -4,27 +4,27 @@
 <div class="container mt-5">
   <div class="card shadow-sm">
     <div class="card-body">
-      <h1 class="card-title mb-3"><%#= @event.title %></h1>
-      <p class="card-text text-secondary"><%#= @event.description %></p>
+      <h1 class="card-title mb-3"><%= @event.title %></h1>
+      <p class="card-text text-secondary"><%= @event.description %></p>
 
       <ul class="list-group list-group-flush mt-4">
         <li class="list-group-item">
-          <strong>Date:</strong> <%#= @event.date.strftime("%B %d, %Y") %>
+          <strong>Date:</strong> <%= @event.date.strftime("%B %d, %Y") %>
         </li>
         <li class="list-group-item">
-          <strong>Category:</strong> <%#= @event.category %>
+          <strong>Category:</strong> <%= @event.category %>
         </li>
         <li class="list-group-item">
-          <strong>Location:</strong> <%#= @event.location %>
+          <strong>Location:</strong> <%= @event.location %>
         </li>
         <li class="list-group-item">
-          <strong>Contact:</strong> <%#= @event.contact %>
+          <strong>Contact:</strong> <%= @event.contact %>
         </li>
       </ul>
     </div>
   </div>
 
   <div class="mt-4">
-    <%#= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
+    <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
   </div>
 </div>
