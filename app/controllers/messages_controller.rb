@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class MessagesController < ApplicationController
   SYSTEM_PROMPT = "You are an expert file clerk.\n\nI am a disorganized person, looking at an event calendar.\n\nCategorize the event list according to the keywords i give you.\n\nAnswer consicely in Markdown."
 
@@ -34,6 +33,4 @@ class MessagesController < ApplicationController
     [SYSTEM_PROMPT, events_list].compact.join("\n\n")
   end
 
-=======
->>>>>>> master
 end
