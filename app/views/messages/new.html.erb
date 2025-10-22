@@ -1,0 +1,14 @@
+<h1> hello world</h1>
+
+<%= simple_form_for  @message do |f| %>
+  <%= f.input :content, label: "Ask a question", required: true %>
+  <%= f.button :submit, 'Submit', class: 'btn btn-primary' %>
+<% end %>
+
+
+  <% @messages.each do |message| %>
+    <p>
+      <strong><%= message.role %> </strong>
+      <%= raw(render_markdown(message.content)) %>
+    </p>
+  <% end %>
