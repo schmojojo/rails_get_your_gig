@@ -10,8 +10,8 @@
 
 <h1>Upcoming Events</h1>
 <div class="mt-4">
-    <%= link_to "Create new Event", "/events/new", class: "btn btn-outline-primary" %>
-    <%= button_to "Search events with AI 💬", chats_path, method: :post, class: "btn btn-primary mb-3" %>
+    <%= link_to "Create new Event", new_event_path, class: "btn btn-outline-primary" %>
+    <%= link_to "search events", new_message_path(@message), class: "btn btn-primary" %>
 </div>
 <% @events.each do |event| %>
   <div class="card mb-3">
@@ -24,5 +24,5 @@
 <% end %>
 
 <div class="mt-4">
-<%= link_to "Create new Event", new_event_path, class: "btn btn-outline-primary" %>
+    <%= link_to "Back to Homepage", root_path, class: "btn btn-outline-primary" %>
 </div>
