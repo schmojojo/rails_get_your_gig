@@ -57,6 +57,8 @@ gem "kramdown"
 gem "rouge"
 gem "kramdown-parser-gfm"
 gem "cloudinary"
+# gem 'cloudinary', '~> 2.20'      # core Cloudinary gem
+# gem 'cloudinary_rails'           # Rails integration (provides cl_image_tag)
 
 group :development, :test do
   gem "dotenv-rails"
