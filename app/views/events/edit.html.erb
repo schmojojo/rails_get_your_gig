@@ -2,7 +2,7 @@
   <% if user_signed_in? %>
     <div class="row mb-4">
       <div class="col-12">
-        <h1 class="display-5 fw-bold mb-3">Create a New Event</h1>
+        <h1 class="display-5 fw-bold mb-3">Edit Event</h1>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
   <% else %>
     <div class="row">
       <div class="col-12">
-        <p>Please <%= link_to "log in", new_user_session_path %> to create a new event.</p>
+        <p>Please <%= link_to "log in", new_user_session_path %> to edit an event.</p>
         <div class="mt-4">
           <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
         </div>
