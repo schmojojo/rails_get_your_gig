@@ -35,12 +35,27 @@ $card-border-radius: $global-radius;
 // Cards
 $card-bg: #ffffff;
 
-//Button
+// Button
 $btn-bg: #ffffff;
+// $btn-primary-hover: #0056cc !important;
 
-//Input
+// Input
 $input-bg: #ffffff;
 $form-label-font-weight: 600;
+
+// List Group for Event Detail Page
+$list-group-bg: #fff !default;
+$list-group-item-padding-x: 0.00rem !default;
+$list-group-item-padding-y: 0.75rem !default;
+
+// Body Background
+// body
+// {
+//   background: $global-gradient;
+//   background-attachment: fixed; // optional: makes gradient fixed
+//   background-size: cover;       // optional: ensure full coverage
+//   min-height: 100vh;            // ensure it covers the whole page
+// }
 
 // Override other variables below!
 $h1-font-weight: 600 !important;
@@ -57,9 +72,13 @@ $btn-font-weight: 600; // default value
 a {
   font-weight: 600; // applies to all links
 }
-.btn {
-  display: inline-block;
-}
+// .btn {
+//   display: inline-block;
+// }
+// .btn-primary:hover {
+//   background-color: #0056cc;
+//   border-color: #0056cc;
+// }
 .card {
   transition: all 0.3s ease; // smooth hover transition
 }
@@ -68,4 +87,9 @@ a {
   box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
   backdrop-filter: blur(5px); // subtle frosted glass effect
   transform: translateY(-3px); // optional: lift card slightly
+}
+// Apply your global heading styles to card titles
+.card-title {
+  color: $headings-color !important;       // use your global heading color variable
+  font-weight: 700 !important;             // your desired h1 weight
 }
