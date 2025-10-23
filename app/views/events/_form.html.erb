@@ -26,5 +26,9 @@
             <%= f.input :location, input_html: { class: "form-control" } %>
           </div>
 
+          <div class="mb-3">
+            <%= f.input :photo, as: :file, input_html: { class: "form-control" } %>
+          </div>
+
           <%= f.submit "Save Event", class: "btn btn-primary" %>
         <% end %>
