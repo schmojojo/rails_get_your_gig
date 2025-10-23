@@ -1,10 +1,10 @@
-<h1> hello world</h1>
-
+<h1> Ask our Chatbot</h1>
+<div class="mb-3">
 <%= simple_form_for  @message do |f| %>
-  <%= f.input :content, label: "Ask a question", required: true %>
+  <%= f.input :content, label: "filter by keywords", required: true %>
   <%= f.button :submit, 'Submit', class: 'btn btn-primary' %>
 <% end %>
-
+</div>
 
   <% @messages.each do |message| %>
     <p>
