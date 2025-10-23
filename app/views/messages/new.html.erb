@@ -6,6 +6,7 @@
   <% end %>
 
 <div class="container mt-4">
+  <% if user_signed_in? %>
   <h1>Your Events AI assistant</h1>
   <p>Ask me anything about the events on GetYourEvent!</p>
 
@@ -34,4 +35,15 @@
   <div class="mt-4 text-center">
         <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
   </div>
+
+  <% else %>
+    <div class="row">
+      <div class="col-12">
+        <p>Please <%= link_to "log in", new_user_session_path %> to create a new message.</p>
+        <div class="mt-4">
+          <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
