@@ -56,8 +56,7 @@ gem "ruby_llm", "~> 1.6.4"
 gem "kramdown"
 gem "rouge"
 gem "kramdown-parser-gfm"
-# gem "cloudinary"
-gem 'cloudinary', '~> 2.4.0' # core Cloudinary gem
+gem 'cloudinary' # core Cloudinary gem
 # gem 'cloudinary_rails' # Rails integration (provides cl_image_tag) # deprecated
 
 group :development, :test do
