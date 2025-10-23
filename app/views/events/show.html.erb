@@ -23,6 +23,9 @@
             <li class="list-group-item">
               <strong>Contact:</strong> <%= @event.contact %>
             </li>
+            <li class="list-group-item">
+               <%= cl_image_tag @event.photo.key, height: 300, width: 200, crop: :fill %>
+            </li>
           </ul>
         </div>
       </div>

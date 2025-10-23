@@ -19,6 +19,7 @@
             <p class="card-text">
               <small class="text-muted"><%= event.date %> — <%= event.location %></small>
             </p>
+              <%= cl_image_tag event.photo.key, height: 300, crop: :fill unless event.photo.key == nil %>
           </div>
         </div>
       </div>
