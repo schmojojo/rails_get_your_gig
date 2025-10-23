@@ -1,11 +1,6 @@
 class MessagesController < ApplicationController
   SYSTEM_PROMPT = "You are an expert file clerk.\n\nI am a beginner file clerck, looking at an event calendar.\n\nHelp me display the #{@events} that match my keywords and show title, description, date, location, contact and category.\n\nAnswer consicely in Markdown."
 
-  def index
-    @messages = current_user.messages.order(created_at: :asc)
-    @message = Message.new
-  end
-
   def new
     @events = Event.all
     @message = Message.new
@@ -34,10 +29,9 @@ class MessagesController < ApplicationController
   end
 
   def event_context
-    events = Event.all.order(date: :asc)
-
-    event_details = events.map do |event|
-      "- Title: #{event.title}, Date: #{event.date}, Location: #{event.location}, Category: #{event.category}"
+    text = "here's the info about the events in the db:"
+    @events.each do |event|
+      text += " Title: #{event.title}, Description: #{event.description} Date: #{event.date}, Location: #{event.location}, Category: #{event.category}, contact: #{event.contact}"
     end
     text
   end
