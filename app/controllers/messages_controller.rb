@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     @events = Event.all
     @messages = Message.all
     @messages.destroy_all
-    @message = Message.new(role: "User", content: params[:message][:content])
+    message = current_user.messages.new(message_params.merge(role: "user"))
     if @message.save
       @ruby_llm_chat = RubyLLM.chat
       response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
