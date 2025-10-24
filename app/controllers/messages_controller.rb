@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   def new
     @events = Event.all
     @message = Message.new
-    @messages = current_user.messages.all
+    @messages = Message.all
   end
 
   def create
