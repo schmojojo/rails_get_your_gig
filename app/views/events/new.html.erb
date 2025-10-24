@@ -15,7 +15,7 @@
   <% else %>
     <div class="alert alert-warning" role="alert">
       <h4 class="alert-heading">Registration required</h4>
-      <p>You need to be logged in to create a new event. Please sign in or create an account to continue.</p>
+      <p>Please log in or create an account to continue.</p>
       <hr>
       <div class="d-flex gap-2">
         <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
@@ -25,6 +25,6 @@
   <% end %>
 
   <div class="mt-4">
-    <%= link_to "← Back to all events", events_path, class: "btn btn-secondary" %>
+    <%= link_to "← Back to all events", events_path, class: "btn btn-outline-primary" %>
   </div>
 </div>
