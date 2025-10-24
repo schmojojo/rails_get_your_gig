@@ -32,7 +32,7 @@ class EventsController < ApplicationController
       redirect_to events_path, notice: "Event created ✅"
     else
       @events = Event.all
-      render :index, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
