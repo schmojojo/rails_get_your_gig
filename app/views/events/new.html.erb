@@ -1,30 +1,23 @@
 <div class="container my-5">
   <% if user_signed_in? %>
-    <div class="row mb-4">
-      <div class="col-12">
-        <h1 class="display-5 fw-bold mb-3">Create a new event</h1>
-      </div>
-    </div>
-
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-12 col-md-8 col-lg-6">
+        <h1>Create a new event</h1>
         <%= render "form", event: @event %>
+        <div class="mt-4">
+          <%= link_to "← Back to events", events_path, class: "btn btn-outline-primary" %>
+        </div>
       </div>
     </div>
 
   <% else %>
-    <div class="alert alert-warning" role="alert">
-      <h4 class="alert-heading">Registration required</h4>
-      <p>Please log in or create an account to continue.</p>
-      <hr>
-      <div class="d-flex gap-2">
-        <%= link_to "Log in", new_user_session_path, class: "btn btn-primary" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-secondary" %>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6 text-center">
+        <div class="card p-4">
+          <p class="mb-3">Please <%= link_to "log in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> to create an event.</p>
+          <%= link_to "← Back to events", events_path, class: "btn btn-outline-primary" %>
+        </div>
       </div>
     </div>
   <% end %>
-
-  <div class="mt-4">
-    <%= link_to "← Back to all events", events_path, class: "btn btn-outline-primary" %>
-  </div>
 </div>

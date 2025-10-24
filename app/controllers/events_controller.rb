@@ -4,8 +4,19 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all.order(date: :asc)
+    # @events = Event.order(date: :asc).limit(params[:limit] || 6)
+    # @total_count = Event.count
     @event = Event.new if user_signed_in?
   end
+
+  # optional: endpoint for loading more
+  # def load_more
+  #   offset = params[:offset].to_i
+  #   limit = 6
+  #   @events = Event.order(date: :asc).offset(offset).limit(limit)
+  #   render partial: "events/event_cards", locals: { events: @events }
+  # end
+
 
   def show
     @event = Event.find(params[:id])

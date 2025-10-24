@@ -24,28 +24,27 @@
               <strong>Contact:</strong> <%= @event.contact %>
             </li>
             <li class="list-group-item">
-               <%= cl_image_tag @event.photo.key, height: 300, width: 200, crop: :fill unless @event.photo.key == nil%>
+               <%= cl_image_tag @event.photo.key, class: "w-100 object-cover", height: 600, crop: :fill unless @event.photo.key == nil%>
             </li>
           </ul>
         </div>
       </div>
 
-      <!--Edit Button-->
-      <div class="mt-4 mb-4">
-          <%= link_to "Edit Event", edit_event_path(@event), class: "btn btn-outline-primary" %>
-      </div>
+      <div class="mt-4 mb-4 d-flex gap-2">
+        <!-- Edit Button -->
+        <%= link_to "Edit Event", edit_event_path(@event), class: "btn btn-outline-primary" %>
 
-       <!--destroy Button-->
-      <div class="mt-4 mb-4">
-          <%= link_to "Delete Event",
-          event_path(@event),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-          class: "btn btn-outline-primary" %>
+        <!-- Delete Button -->
+        <%= link_to "Delete Event",
+                    event_path(@event),
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                    class: "btn btn-outline-primary" %>
+
       </div>
 
 
       <!-- Back Button -->
-      <div class="mt-4 text-center">
+      <div class="mt-4 text-start">
         <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
       </div>
     </div>
