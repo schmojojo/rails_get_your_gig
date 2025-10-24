@@ -8,23 +8,28 @@ class MessagesController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @events = Event.all
     @message = Message.new
     @messages = Message.all
+
   end
 
   def create
+    @user = User.find(params[:user_id])
     @events = Event.all
     @messages = Message.all
-    @message = Message.new(message_params.merge(role: "user"))
+    @message = Message.new(message_params.merge(role: "User", user: @user))
     if @message.save
       @ruby_llm_chat = RubyLLM.chat
       response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
-      current_user.messages.create(role: "Assistant", content: response.content)
-      redirect_to new_message_path
+      Message.create(role: "Assistant", content: response.content,  user: @user)
+      redirect_to new_user_message_path
     else
-      @messages = current_user.messages.all
+      raise
+      @messages = Message.all
       render :new, status: :unprocessable_entity
+
     end
   end
 

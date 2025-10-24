@@ -3,7 +3,7 @@
 
   <div class="mt-4 mb-4">
     <%= link_to "Create new Event", new_event_path, class: "btn btn-outline-primary me-2" %>
-    <%= link_to "Search Events", new_message_path, class: "btn btn-primary" %>
+    <%= link_to "Search Events", new_user_message_path(current_user), class: "btn btn-primary" %>
   </div>
 
   <div class="row g-4">
