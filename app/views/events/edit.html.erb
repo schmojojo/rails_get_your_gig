@@ -2,7 +2,7 @@
   <% if user_signed_in? %>
     <div class="row mb-4">
       <div class="col-12">
-        <h1 class="display-5 fw-bold mb-3">Edit Event</h1>
+        <h1 class="display-5 fw-bold mb-3">Edit event</h1>
       </div>
     </div>
 
@@ -10,7 +10,7 @@
       <div class="col-12 col-md-8 col-lg-6">
        <%= render "form", event: @event %>
         <div class="mt-4">
-          <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
+          <%= link_to "← Back to events", events_path, class: "btn btn-outline-primary" %>
         </div>
       </div>
     </div>
@@ -18,9 +18,9 @@
   <% else %>
     <div class="row">
       <div class="col-12">
-        <p>Please <%= link_to "log in", new_user_session_path %> to edit an event.</p>
+        <p>Please <%= link_to "log in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> to edit an event.</p>
         <div class="mt-4">
-          <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
+          <%= link_to "← Back to events", events_path, class: "btn btn-outline-primary" %>
         </div>
       </div>
     </div>
