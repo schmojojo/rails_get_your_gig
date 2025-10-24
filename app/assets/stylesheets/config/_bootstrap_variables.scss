@@ -93,3 +93,7 @@ a {
   color: $headings-color !important;       // use your global heading color variable
   font-weight: 700 !important;             // your desired h1 weight
 }
+.object-cover {
+  object-fit: cover;
+  object-position: center;
+}
