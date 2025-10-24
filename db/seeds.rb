@@ -54,7 +54,7 @@ end
 puts "Scraping events..."
 
 # Loop over teaser items
-doc.css("div#event-list div.teaser-item.medium").each do |item|
+doc.css("div#event-list div.teaser-item.medium")[0,18].each do |item|
   title = item.at_css("a.title")&.text&.strip
   description = item.at_css("a.description")&.text&.strip || "No description available"
   image_url = item.at_css("a.image-wrapper img")&.[]("src")
