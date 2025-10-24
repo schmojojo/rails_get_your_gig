@@ -7,7 +7,7 @@
 
 <div class="container mt-4">
    <div class="mt-4 mb-4">
-    <%= link_to "Chat History", messages_path, class: "btn btn-outline-primary me-2" %>
+    <%= link_to "Chat History", user_messages_path, class: "btn btn-outline-primary me-2" %>
   </div>
   <% if user_signed_in? %>
   <h1>Your Events AI assistant</h1>
@@ -31,7 +31,7 @@
     <% end %>
   </div>
 
-  <%= simple_form_for @message do |f| %>
+  <%= simple_form_for [@user, @message] do |f| %>
     <%= f.input :content, label: false, placeholder: "Ask a question...", required: true %>
     <%= f.button :submit, 'Send', class: 'btn btn-primary' %>
   <% end %>
