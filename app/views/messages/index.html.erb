@@ -1,0 +1,22 @@
+<div class="container mt-4">
+ <div class="chat-window border rounded p-3 mb-3" style="height: 60%; overflow-y: scroll;">
+    <% @messages.each do |message| %>
+      <% if message.role == "user" %>
+        <div class="text-end mb-2">
+          <p class="d-inline-block p-2 rounded bg-primary text-white m-0">
+            <%= raw(render_markdown(message.content)) %>
+          </p>
+        </div>
+      <% else %>
+        <div class="text-start mb-2">
+          <p class="d-inline-block p-2 rounded bg-light text-dark m-0">
+            <%= raw(render_markdown(message.content)) %>
+          </p>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+    <div class="mt-4 text-center">
+        <%= link_to "← Back to Events", events_path, class: "btn btn-outline-primary" %>
+  </div>
+</div>

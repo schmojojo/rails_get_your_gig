@@ -1,6 +1,10 @@
 class MessagesController < ApplicationController
   SYSTEM_PROMPT = "You are an expert file clerk.\n\nI am a beginner file clerck, looking at an event calendar.\n\nHelp me display the #{@events} that match my keywords and show title, description, date, location, contact and category.\n\nAnswer consicely in Markdown."
 
+  def index
+    @messages = Message.all
+  end
+  
   def new
     @events = Event.all
     @message = Message.new
@@ -10,7 +14,6 @@ class MessagesController < ApplicationController
   def create
     @events = Event.all
     @messages = Message.all
-    @messages.destroy_all
     @message = Message.new(message_params.merge(role: "user"))
     if @message.save
       @ruby_llm_chat = RubyLLM.chat
