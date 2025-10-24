@@ -5,7 +5,11 @@
 
   <div class="mt-4 mb-4">
     <%= link_to "Create new Event", new_event_path, class: "btn btn-outline-primary me-2" %>
+    <% if user_signed_in? %>
     <%= link_to "Search Events", new_user_message_path(current_user), class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Search Events",  new_user_session_path, class: "btn btn-primary" %>
+    <% end %>
   </div>
 
   <div class="row g-4">
